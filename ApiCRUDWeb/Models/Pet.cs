@@ -1,0 +1,1 @@
+﻿public record Pet(Guid Id, string Name, DateTime DateOfBirh, string Breed, Guid PetDetailsId, Guid UserId);
