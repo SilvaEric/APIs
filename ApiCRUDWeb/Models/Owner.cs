@@ -1,1 +1,10 @@
-﻿public record Owner(Guid Id, DateTime DateOfBirth, string CPF, string PhoneNumber, string Adress);
+﻿namespace ApiCRUDWeb.Models
+{
+	public class Owner : User
+	{ 
+		public DateTime DateOfBirth { get; set; }
+		public string CPF { get; }
+		public string PhoneNumber { get; set; } 
+		public string Adress { get; set; } 
+	}
+}

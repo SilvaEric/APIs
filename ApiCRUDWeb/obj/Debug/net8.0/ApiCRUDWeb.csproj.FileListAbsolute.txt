@@ -154,3 +154,9 @@ C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Cachin
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.csproj.Up2Date
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.sourcelink.json

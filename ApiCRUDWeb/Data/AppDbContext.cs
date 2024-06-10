@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection.Metadata;
+using ApiCRUDWeb.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiCRUDWeb.Data
 {
@@ -12,5 +14,22 @@ namespace ApiCRUDWeb.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 			=> options.UseSqlite("DataSource=app.db; Cache=Shared");
-    }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Pet>()
+				.HasOne(e => e.Details)
+				.WithOne(e => e.Pet)
+				.HasForeignKey<PetDetails>(e => e.PetId)
+				.IsRequired(false);
+
+			modelBuilder.Entity<User>()
+				.HasMany(e => e.Pets)
+				.WithOne(e => e.Tutor)
+				.HasForeignKey(e => e.TutorId)
+				.IsRequired(false);
+
+			base.OnModelCreating(modelBuilder);
+		}
+	}
 }
