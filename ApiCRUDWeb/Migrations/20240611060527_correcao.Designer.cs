@@ -3,6 +3,7 @@ using System;
 using ApiCRUDWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCRUDWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240611060527_correcao")]
+    partial class correcao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
@@ -46,8 +49,7 @@ namespace ApiCRUDWeb.Migrations
 
             modelBuilder.Entity("ApiCRUDWeb.Models.PetDetails", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("PetId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EyesColor")
@@ -57,15 +59,15 @@ namespace ApiCRUDWeb.Migrations
                     b.Property<double>("Heigth")
                         .HasColumnType("REAL");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("NonPredominantColor")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Pelage")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("PetId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PredominantColor")
@@ -76,10 +78,7 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("PetId")
-                        .IsUnique();
+                    b.HasKey("PetId");
 
                     b.ToTable("PetsDetails");
                 });

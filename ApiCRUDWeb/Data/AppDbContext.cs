@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using ApiCRUDWeb.Models;
+﻿using ApiCRUDWeb.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiCRUDWeb.Data
@@ -13,7 +12,10 @@ namespace ApiCRUDWeb.Data
         public DbSet<User> Users { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
-			=> options.UseSqlite("DataSource=app.db; Cache=Shared");
+		{
+			options.UseSqlite("DataSource=app.db;");
+			base.OnConfiguring(options);
+		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

@@ -1,0 +1,7 @@
+@ApiCRUDWeb_HostAddress = http://localhost:5075
+
+POST {{ApiCRUDWeb_HostAddress}}/v1/Pets
+
+Accept: application/json
+
+###
