@@ -19,7 +19,7 @@ namespace ApiCRUDWeb.Migrations
 
             modelBuilder.Entity("ApiCRUDWeb.Models.Pet", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("PetId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -34,19 +34,19 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("TutorId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("PetId");
 
-                    b.HasIndex("TutorId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Pets");
                 });
 
             modelBuilder.Entity("ApiCRUDWeb.Models.PetDetails", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("PetDetailsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
@@ -58,11 +58,9 @@ namespace ApiCRUDWeb.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("NonPredominantColor")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Pelage")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("PetId")
@@ -73,10 +71,9 @@ namespace ApiCRUDWeb.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TongueColor")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("PetDetailsId");
 
                     b.HasIndex("PetId")
                         .IsUnique();
@@ -86,8 +83,11 @@ namespace ApiCRUDWeb.Migrations
 
             modelBuilder.Entity("ApiCRUDWeb.Models.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Adress")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Discriminator")
@@ -99,10 +99,6 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Login")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -111,7 +107,7 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
                     b.ToTable("Users");
 
@@ -124,7 +120,7 @@ namespace ApiCRUDWeb.Migrations
                 {
                     b.HasBaseType("ApiCRUDWeb.Models.User");
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("CNPJ")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -132,22 +128,12 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.ToTable("Users", t =>
-                        {
-                            t.Property("Adress")
-                                .HasColumnName("Institution_Adress");
-                        });
-
                     b.HasDiscriminator().HasValue("Institution");
                 });
 
             modelBuilder.Entity("ApiCRUDWeb.Models.Owner", b =>
                 {
                     b.HasBaseType("ApiCRUDWeb.Models.User");
-
-                    b.Property<string>("Adress")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("TEXT");
@@ -163,7 +149,9 @@ namespace ApiCRUDWeb.Migrations
                 {
                     b.HasOne("ApiCRUDWeb.Models.User", "Tutor")
                         .WithMany("Pets")
-                        .HasForeignKey("TutorId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Tutor");
                 });
@@ -172,7 +160,9 @@ namespace ApiCRUDWeb.Migrations
                 {
                     b.HasOne("ApiCRUDWeb.Models.Pet", "Pet")
                         .WithOne("Details")
-                        .HasForeignKey("ApiCRUDWeb.Models.PetDetails", "PetId");
+                        .HasForeignKey("ApiCRUDWeb.Models.PetDetails", "PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Pet");
                 });

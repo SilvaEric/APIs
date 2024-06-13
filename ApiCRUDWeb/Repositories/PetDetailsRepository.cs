@@ -12,52 +12,45 @@ namespace ApiCRUDWeb.Repositories
 		{
 			_context = context;
 		}
-		public async Task<PetDetails> AddPetDetails(PetDetails petDetails)
+		public async Task<PetDetails> AddPetDetails(PetDetails petDetails, Guid petId)
 		{
-			try
-			{
-				await _context.PetsDetails.AddAsync(petDetails);
-				await _context.SaveChangesAsync();
-				return petDetails;
-			}
-
-			catch
-			{
-				throw new InvalidOperationException("Erro ao adicionar detalhe do pet");
-			}
+			var _pet = await _context.Pets.Where(p => p.PetId == petId).FirstOrDefaultAsync();
+			_pet.Details = petDetails;
+			await _context.SaveChangesAsync();
+			return _pet.Details;
 		}
 	
 
-		public async Task<PetDetails> GetPetDetails(Guid id)
+		public async Task<PetDetails> GetPetDetails(Guid petId)
 		{
-			try
+			var teste = await _context.PetsDetails.FirstOrDefaultAsync(p => p.PetId == petId);
+			if (teste is null)
 			{
-				var petdetails = await _context.PetsDetails.FirstOrDefaultAsync(pd => pd.PetId == id);
-				if (petdetails is null)
-				{
-					throw new InvalidOperationException("Esse pet não existe em nossa base de dados");
-				}
-				return petdetails;
+				throw new InvalidOperationException("Esse pet não existe em nossa base de dados");
 			}
-
-			catch
-			{
-				throw new InvalidOperationException("Erro ao obter detalhes do pet");
-			}
+			return teste;
 		}
 
-		public async Task<PetDetails> UpdatePetDetails(Guid id, PetDetails newPetDetails)
+		public async Task<PetDetails> UpdatePetDetails(Guid petId, PetDetails input)
 		{
-			var petDetails = await _context.PetsDetails.SingleOrDefaultAsync(pd => pd.Id == id);
-			if (petDetails == null)
-			{
+			var petDetailsContext = await _context.PetsDetails.SingleOrDefaultAsync(p => p.PetId == petId);
+			if (petDetailsContext == null)
 				throw new InvalidOperationException("Detalhes do pet não exitem na base de dados");
-			}
-			
-			_context.Update(petDetails);
-			petDetails = newPetDetails;
+
+			if (input.NonPredominantColor is not null)
+				petDetailsContext.NonPredominantColor = input.NonPredominantColor;
+
+			if(input.TongueColor is not null)
+				petDetailsContext.TongueColor = input.TongueColor;
+
+			petDetailsContext.PredominantColor = input.PredominantColor;
+			petDetailsContext.Heigth = input.Heigth;
+			petDetailsContext.Pelage = input.Pelage;
+			petDetailsContext.EyesColor = input.EyesColor;
+
+			_context.PetsDetails.Update(petDetailsContext);
 			await _context.SaveChangesAsync();
-			return newPetDetails;
+			return petDetailsContext;
 		}
 	}
 }

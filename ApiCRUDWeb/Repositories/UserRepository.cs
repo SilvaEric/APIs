@@ -28,7 +28,7 @@ namespace ApiCRUDWeb.Repositories
 			}
 		}
 
-		public async Task<List<User>> GetAllUser()
+		public async Task<ICollection<User>> GetAllUser()
 		{
 			try
 			{
@@ -45,7 +45,8 @@ namespace ApiCRUDWeb.Repositories
 		public async Task<User> GetUser(Guid id)
 		{
 
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+			var user = await _context.Users.Include(u => u.Pets)
+				.FirstOrDefaultAsync(u => u.UserId == id);
 
 			if(user is not null)
 			{

@@ -11,94 +11,75 @@ namespace ApiCRUDWeb.Repositories.Interfaces
 		{
 			_context = context;
 		}
-		public async Task<Pet> AddPet(Pet pet)
+		public async Task<Pet> AddPet(Pet pet, Guid tutorId)
 		{
-			try
+			var _tutor = _context.Users.Where( t => t.UserId == tutorId)
+								.FirstOrDefault();
+			
+			if(_tutor is null)
 			{
-				_context.Pets.Add(pet);
-				await _context.SaveChangesAsync();
-				return pet;
+				throw new InvalidOperationException("não foi possivel adicionar o pet na base de dados");
 			}
 
-			catch
-			{
-				throw new InvalidOperationException("Erro ao adicionar pet");
-			}
+			pet.Tutor = _tutor;
+			var _pet = await _context.Pets.AddAsync(pet);
+			await _context.SaveChangesAsync();
+
+			return pet;
 		}
 
-		public async Task DeletePet(Guid id)
+		public async Task<bool> DeletePet(Guid tutorId, Guid petId)
 		{
-			try
+			var _pet = await _context.Pets.Where(p => p.Tutor.UserId == tutorId && p.PetId == petId)
+											.FirstOrDefaultAsync();
+			if(_pet is not null)
 			{
-				var pet = await GetPet(id);
-				if(pet is not null)
-				{
-					_context.Pets.Remove(pet);
-					await _context.SaveChangesAsync();
-				}
+				_context.Pets.Remove(_pet);
+				await _context.SaveChangesAsync();
+				return true;
+			}
+			return false;
+		}
+
+		public async Task<List<Pet>> GetAllPets(Guid tutorId)
+		{
+
+			var _pets = await _context.Pets.Where(p => p.UserId == tutorId).ToListAsync();
+				
+			return _pets;
+
+		}
+
+		public async Task<Pet> GetPet(Guid tutorId, Guid petId)
+		{
+			var _pet = await _context.Pets.Include(p=>p.Details)
+				.Where(pet=> pet.UserId == tutorId && pet.PetId == petId)
+				.FirstOrDefaultAsync();
+			///await _context.Entry(_pet).Reference(p => p.Details).LoadAsync();
+			if(_pet is null)
+			{
 				throw new InvalidOperationException("Esse pet não existe em nossa base de dados");
 			}
 
-			catch
-			{
-				throw new InvalidOperationException("Erro ao deletar pet");
-			}
+			return _pet;
 		}
 
-		public async Task<List<Pet>> GetAllPets(Guid id)
+		public async Task<Pet> UpdatePet(Guid petId, Pet input)
 		{
-			try
-			{
-				List<Pet> pets = new List<Pet>();
+			var petContext = await _context.Pets.Where(p => p.PetId == petId)
+				.SingleOrDefaultAsync();
 
-				if(_context.Pets.Where(p => p.TutorId == id) is null)
-				{
-					throw new InvalidOperationException("Não há pet cadastrado");
-				}
+			if (petContext is null)
+				throw new InvalidOperationException("Este Pet não exite na base de dados");
+			
+			petContext.Name = input.Name;
+			petContext.DateOfBirh = input.DateOfBirh;
+			petContext.Name = input.Name;
 
-				foreach(Pet p in _context.Pets.Where(p => p.TutorId == id))
-				{
-					pets.Add(p);
-				}
-				
-				return pets;
-			}
-
-			catch
-			{
-				throw new InvalidOperationException("Erro ao obter pets");
-			}
-		}
-		public async Task<Pet> GetPet(Guid id)
-		{
-			try
-			{
-				var pet = await _context.Pets.FirstOrDefaultAsync(p => p.Id == id);
-				if (pet is null)
-				{
-					throw new InvalidOperationException("Esse pet não existe em nossa base de dados");
-				}
-				return pet;
-			}
-
-			catch
-			{
-				throw new InvalidOperationException("Erro ao obter pet");
-			}
-		}
-
-		public async Task<Pet> UpdatePet(Guid id, Pet newPet)
-		{
-			var pet = await _context.Pets.SingleOrDefaultAsync(p => p.Id == id);
-			if (pet == null)
-			{
-				throw new InvalidOperationException("Detalhes do pet não exitem na base de dados");
-			}
-
-			_context.Update(pet);
-			pet = newPet;
+			_context.Pets.Update(petContext);
 			await _context.SaveChangesAsync();
-			return newPet;
+
+			return petContext;
 		}
 	}
 }

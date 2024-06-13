@@ -15,15 +15,15 @@ namespace ApiCRUDWeb.Controllers
 			_petDetailsRepository = petDetailsRepository;
 		}
 
-		[HttpPost("[action]")]
+		[HttpPost("[action]/{petId:Guid}")]
 		[ProducesResponseType(StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		public async Task<IActionResult> Register([FromBody] PetDetails petDetails)
+		public async Task<IActionResult> RegisterAsync([FromBody] PetDetails petDetails, Guid petId)
 		{
-			var register = await _petDetailsRepository.AddPetDetails(petDetails);
+			var register = await _petDetailsRepository.AddPetDetails(petDetails, petId);
 			if(register is null)
 			{
-				return StatusCode(StatusCodes.Status400BadRequest);
+				return BadRequest() ;
 			}
 			return StatusCode(StatusCodes.Status201Created);
 		}
@@ -31,26 +31,26 @@ namespace ApiCRUDWeb.Controllers
 		[HttpGet("[action]")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> Get(Guid id)
+		public async Task<IActionResult> GetAsync(Guid petId)
 		{
-			var register = await _petDetailsRepository.GetPetDetails(id);
+			var register = await _petDetailsRepository.GetPetDetails(petId);
 			if (register is null)
 			{
-				return StatusCode(StatusCodes.Status204NoContent);
+				return NoContent();
 			}
 			return Ok(register);
 		}
 
-		[HttpPut("[action]/{id:Guid}")]
+		[HttpPut("[action]/{petId:Guid}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> Update(Guid id, PetDetails petDetails)
+		public async Task<IActionResult> UpdateAsync(Guid petId, [FromBody] PetDetails petDetails)
 		{
 			
-			var query = await _petDetailsRepository.UpdatePetDetails(id, petDetails);
+			var query = await _petDetailsRepository.UpdatePetDetails(petId, petDetails);
 			if(query == null)
 			{
-				return StatusCode(StatusCodes.Status204NoContent);
+				return NoContent();
 			}
 			return Ok(query);
 		}

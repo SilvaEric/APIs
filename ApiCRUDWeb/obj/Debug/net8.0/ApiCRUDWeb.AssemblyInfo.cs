@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiCRUDWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c62041793aff6c2e44bfecb417a5435ec018aeab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33a207a52239417fd1e297a5a995b95417c5adca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiCRUDWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiCRUDWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

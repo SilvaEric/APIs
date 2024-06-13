@@ -2,7 +2,7 @@
 { 
 	public class Institution : User
 	{ 
-		public string Adress { get; set; }
+		public string CNPJ { get; set; }
 		public string Contact { get; set; }
 
     }

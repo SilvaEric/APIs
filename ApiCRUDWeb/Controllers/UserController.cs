@@ -20,12 +20,12 @@ namespace ApiCRUDWeb.Controllers
 		[HttpPost("[action]")]
 		[ProducesResponseType(StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		public async Task<IActionResult> Register([FromBody] User User)
+		public async Task<IActionResult> RegisterAsync([FromBody] User User)
 		{
 			var createUser = await _userRepository.AddUser(User);
 			if(createUser is null)
 			{
-				return StatusCode(StatusCodes.Status400BadRequest);
+				return BadRequest();
 			}
 			return StatusCode(StatusCodes.Status201Created);
 		}
@@ -33,12 +33,12 @@ namespace ApiCRUDWeb.Controllers
 		[HttpGet("[action]")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> Get(Guid id)
+		public async Task<IActionResult> GetAsync(Guid id)
 		{
 			var getUser = await _userRepository.GetUser(id);
 			if(getUser is null)
 			{
-				return StatusCode(StatusCodes.Status204NoContent);
+				return NoContent();
 			}
 			return Ok(getUser);
 		}

@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ApiCRUDWeb.Models
 {
 	public class Pet
 	{
-		public Guid Id { get; set; }
+		public Guid? PetId { get; set; }
 		[Required]
 		public string Name { get; set; }
 		[Required]
@@ -12,8 +13,9 @@ namespace ApiCRUDWeb.Models
 		[Required]
 		public string Breed { get; set; }
 		public PetDetails? Details{ get; set; }
-		public Guid TutorId { get; set;  }
-		[Required]
-		public User Tutor { get; set; }
+		[JsonIgnore]
+		public Guid UserId { get; set; }
+		[JsonIgnore]
+		public User? Tutor { get; set; }
 	}
 }

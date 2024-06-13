@@ -4,6 +4,7 @@ using ApiCRUDWeb.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 namespace ApiCRUDWeb
 {
@@ -12,7 +13,11 @@ namespace ApiCRUDWeb
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddScoped<AppDbContext>();
-			services.AddControllers();
+			services.AddControllers()
+				.AddJsonOptions(options =>
+			{
+				options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+			}); ;
 			services.AddScoped<IPetDetailsRepository, PetDetailsRepository>();
 			services.AddScoped<IPetRepository, PetRepository>();
 			services.AddScoped<IUserRepository, UserRepository>();

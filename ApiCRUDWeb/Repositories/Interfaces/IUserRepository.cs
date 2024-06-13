@@ -10,7 +10,7 @@ namespace ApiCRUDWeb.Repositories.Interfaces
 
 		Task<User> GetUser(Guid id);
 
-		Task<List<User>> GetAllUser();
+		Task<ICollection<User>> GetAllUser();
 
 	}
 }
