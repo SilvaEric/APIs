@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Dev\\ApiCRUDWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PetRepository.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\PetRepository.cs",
@@ -51,16 +55,24 @@
               "ViewState": "AQIAACkAAAAAAAAAAAAwwA8AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-11T02:37:59.352Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApiCRUDWeb.csproj",
+              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj",
+              "RelativeDocumentMoniker": "ApiCRUDWeb.csproj",
+              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj",
+              "RelativeToolTip": "ApiCRUDWeb.csproj",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-13T21:06:31.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -68,12 +80,11 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAowCMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:12:48.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T20:12:48.314Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PetDetailsRepository.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetDetailsRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\PetDetailsRepository.cs",
@@ -81,12 +92,11 @@
               "RelativeToolTip": "Repositories\\PetDetailsRepository.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAAACQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T14:04:06.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T14:04:06.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PetDetails.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Models\\PetDetails.cs",
               "RelativeDocumentMoniker": "Models\\PetDetails.cs",
@@ -94,12 +104,11 @@
               "RelativeToolTip": "Models\\PetDetails.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAIAwwAsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T07:00:31.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T07:00:31.691Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Startup.cs",
               "RelativeDocumentMoniker": "Startup.cs",
@@ -111,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PetController.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetController.cs",
               "RelativeDocumentMoniker": "Controllers\\PetController.cs",
@@ -119,12 +128,11 @@
               "RelativeToolTip": "Controllers\\PetController.cs",
               "ViewState": "AQIAAFEAAAAAAAAAAAAmwFEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T14:10:10.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T14:10:10.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PetDetailsController.cs",
               "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetDetailsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PetDetailsController.cs",
@@ -132,8 +140,7 @@
               "RelativeToolTip": "Controllers\\PetDetailsController.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAUwBQAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T16:32:35.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T16:32:35.849Z"
             }
           ]
         }
