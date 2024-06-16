@@ -13,7 +13,7 @@ namespace ApiCRUDWeb.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			options.UseNpgsql(@"Host=postgres://ericdev:bP4inDUxcLyqIAQuBnbUjSrK5tq83u7N@dpg-cpn5ra08fa8c73arhst0-a.oregon-postgres.render.com/apicrudweb;Username=ericdev;Password=bP4inDUxcLyqIAQuBnbUjSrK5tq83u7N;Database=apicrudweb");
+			options.UseSqlite("DataSource=app.db;Cache=Shared");
 			base.OnConfiguring(options);
 		}
 	}

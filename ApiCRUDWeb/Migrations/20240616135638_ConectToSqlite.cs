@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiCRUDWeb.Migrations
 {
     /// <inheritdoc />
-    public partial class ConectToSqlServer : Migration
+    public partial class ConectToSqlite : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,16 +15,16 @@ namespace ApiCRUDWeb.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmailAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
-                    CNPJ = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Contact = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UserId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    EmailAdress = table.Column<string>(type: "TEXT", nullable: false),
+                    Password = table.Column<string>(type: "TEXT", nullable: false),
+                    Adress = table.Column<string>(type: "TEXT", nullable: true),
+                    Discriminator = table.Column<string>(type: "TEXT", maxLength: 13, nullable: false),
+                    CNPJ = table.Column<string>(type: "TEXT", nullable: true),
+                    Contact = table.Column<string>(type: "TEXT", nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -35,11 +35,11 @@ namespace ApiCRUDWeb.Migrations
                 name: "Pets",
                 columns: table => new
                 {
-                    PetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfBirh = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Breed = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PetId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    DateOfBirh = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Breed = table.Column<string>(type: "TEXT", nullable: false),
+                    UserId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,14 +56,14 @@ namespace ApiCRUDWeb.Migrations
                 name: "PetsDetails",
                 columns: table => new
                 {
-                    PetDetailsId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PredominantColor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NonPredominantColor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Heigth = table.Column<double>(type: "float", nullable: false),
-                    Pelage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EyesColor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TongueColor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PetId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    PetDetailsId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PredominantColor = table.Column<string>(type: "TEXT", nullable: false),
+                    NonPredominantColor = table.Column<string>(type: "TEXT", nullable: true),
+                    Heigth = table.Column<double>(type: "REAL", nullable: false),
+                    Pelage = table.Column<string>(type: "TEXT", nullable: false),
+                    EyesColor = table.Column<string>(type: "TEXT", nullable: false),
+                    TongueColor = table.Column<string>(type: "TEXT", nullable: true),
+                    PetId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,8 +84,7 @@ namespace ApiCRUDWeb.Migrations
                 name: "IX_PetsDetails_PetId",
                 table: "PetsDetails",
                 column: "PetId",
-                unique: true,
-                filter: "[PetId] IS NOT NULL");
+                unique: true);
         }
 
         /// <inheritdoc />
