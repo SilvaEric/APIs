@@ -160,3 +160,5 @@ C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Npgsql.dll
+C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

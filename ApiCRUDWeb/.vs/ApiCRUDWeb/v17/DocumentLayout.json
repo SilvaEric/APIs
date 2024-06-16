@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Dev\\ApiCRUDWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA8AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T14:15:19.439Z"
+              "Title": "ApiCRUDWeb",
+              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj",
+              "RelativeDocumentMoniker": "ApiCRUDWeb.csproj",
+              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj*",
+              "RelativeToolTip": "ApiCRUDWeb.csproj*",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-16T04:14:36.574Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-06-15T13:57:42.631Z",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs*",
+              "RelativeToolTip": "Data\\AppDbContext.cs*",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T14:15:19.439Z",
               "EditorCaption": ""
             }
           ]
