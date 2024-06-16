@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Dev\\ApiCRUDWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:apicrudweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\controllers\\petdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:controllers\\petdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\repositories\\petdetailsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:repositories\\petdetailsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\models\\petdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:models\\petdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|c:\\dev\\apicrudweb\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EAF6BD1-9892-4A06-A09A-C9A1BCC6FB79}|ApiCRUDWeb.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,101 +22,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PetRepository.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\PetRepository.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetRepository.cs",
-              "RelativeToolTip": "Repositories\\PetRepository.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwA8AAAAUAAAA",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA8AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T02:37:59.352Z",
-              "IsPinned": true
+              "WhenOpened": "2024-06-15T14:15:19.439Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApiCRUDWeb.csproj",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj",
-              "RelativeDocumentMoniker": "ApiCRUDWeb.csproj",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\ApiCRUDWeb.csproj",
-              "RelativeToolTip": "ApiCRUDWeb.csproj",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-13T21:06:31.74Z",
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-06-15T13:57:42.631Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowCMAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:12:48.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PetDetailsRepository.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetDetailsRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\PetDetailsRepository.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Repositories\\PetDetailsRepository.cs",
-              "RelativeToolTip": "Repositories\\PetDetailsRepository.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAACQAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T14:04:06.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PetDetails.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Models\\PetDetails.cs",
-              "RelativeDocumentMoniker": "Models\\PetDetails.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Models\\PetDetails.cs",
-              "RelativeToolTip": "Models\\PetDetails.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAIAwwAsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T07:00:31.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Startup.cs",
-              "RelativeDocumentMoniker": "Startup.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Startup.cs",
-              "RelativeToolTip": "Startup.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBIAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:45:00.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PetController.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PetController.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetController.cs",
-              "RelativeToolTip": "Controllers\\PetController.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAmwFEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T14:10:10.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PetDetailsController.cs",
-              "DocumentMoniker": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetDetailsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PetDetailsController.cs",
-              "ToolTip": "C:\\Dev\\ApiCRUDWeb\\Controllers\\PetDetailsController.cs",
-              "RelativeToolTip": "Controllers\\PetDetailsController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAUwBQAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T16:32:35.849Z"
             }
           ]
         }

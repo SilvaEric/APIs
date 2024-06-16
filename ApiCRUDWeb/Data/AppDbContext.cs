@@ -13,7 +13,7 @@ namespace ApiCRUDWeb.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			options.UseSqlite("DataSource=app.db;");
+			options.UseSqlServer("Server=sql,1433;Database=ApiCrudWeb;User ID=sa;Password=@Evsgdrb2020; Trusted_Connection=False; TrustServerCertificate=True;");
 			base.OnConfiguring(options);
 		}
 	}

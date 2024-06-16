@@ -3,6 +3,7 @@ using System;
 using ApiCRUDWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -11,34 +12,38 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCRUDWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240612172451_InitialCreation")]
-    partial class InitialCreation
+    [Migration("20240615024359_ConectToSqlServer")]
+    partial class ConectToSqlServer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "8.0.6")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("ApiCRUDWeb.Models.Pet", b =>
                 {
-                    b.Property<Guid>("PetId")
+                    b.Property<Guid?>("PetId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Breed")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOfBirh")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("PetId");
 
@@ -51,64 +56,66 @@ namespace ApiCRUDWeb.Migrations
                 {
                     b.Property<Guid>("PetDetailsId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("EyesColor")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Heigth")
-                        .HasColumnType("REAL");
+                        .HasColumnType("float");
 
                     b.Property<string>("NonPredominantColor")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Pelage")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PetId")
-                        .HasColumnType("TEXT");
+                    b.Property<Guid?>("PetId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PredominantColor")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TongueColor")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PetDetailsId");
 
                     b.HasIndex("PetId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PetId] IS NOT NULL");
 
                     b.ToTable("PetsDetails");
                 });
 
             modelBuilder.Entity("ApiCRUDWeb.Models.User", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Adress")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasMaxLength(13)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(13)");
 
                     b.Property<string>("EmailAdress")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 
@@ -125,11 +132,11 @@ namespace ApiCRUDWeb.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Contact")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Institution");
                 });
@@ -139,11 +146,11 @@ namespace ApiCRUDWeb.Migrations
                     b.HasBaseType("ApiCRUDWeb.Models.User");
 
                     b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Owner");
                 });
@@ -163,9 +170,7 @@ namespace ApiCRUDWeb.Migrations
                 {
                     b.HasOne("ApiCRUDWeb.Models.Pet", "Pet")
                         .WithOne("Details")
-                        .HasForeignKey("ApiCRUDWeb.Models.PetDetails", "PetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApiCRUDWeb.Models.PetDetails", "PetId");
 
                     b.Navigation("Pet");
                 });

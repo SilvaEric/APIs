@@ -69,6 +69,14 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.NET.Build.Containers": {
+              "target": "Package",
+              "version": "[8.0.302, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.20.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
