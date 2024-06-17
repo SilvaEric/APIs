@@ -1,0 +1,9 @@
+services:
+  apicrudweb:
+    container_name: apicrudweb
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: apicrudweb
+    ports: 
+      - "8075:8080"
