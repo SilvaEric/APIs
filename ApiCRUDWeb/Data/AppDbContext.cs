@@ -5,15 +5,21 @@ namespace ApiCRUDWeb.Data
 {
 	public class AppDbContext : DbContext
 	{
+		private readonly IConfiguration _configuration;
         public DbSet<Pet> Pets { get; set; }
 		public DbSet<Institution> Institutions { get; set; }
 		public DbSet<Owner> Owners { get; set; }
 		public DbSet<PetDetails> PetsDetails { get; set; }
         public DbSet<User> Users { get; set; }
 
+		public AppDbContext(IConfiguration Configuration)
+		{
+			_configuration = Configuration;
+		}
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			options.UseNpgsql("Server=dpg-cpn5ra08fa8c73arhst0-a.oregon-postgres.render.com;Port=5432;Database=apicrudweb;Userid=ericdev;Password=bP4inDUxcLyqIAQuBnbUjSrK5tq83u7N;SSL Mode=Require;");
+			var connectionstring =  
+			options.UseNpgsql(_configuration.GetConnectionString("PostgresSql"));
 			base.OnConfiguring(options);
 		}
 	}
