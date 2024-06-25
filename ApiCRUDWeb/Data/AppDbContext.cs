@@ -18,8 +18,12 @@ namespace ApiCRUDWeb.Data
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
+<<<<<<< HEAD
 			var connectionstring =  
 			options.UseNpgsql(_configuration.GetConnectionString("PostgresSql"));
+=======
+			options.UseNpgsql("Server=dpg-cpn5ra08fa8c73arhst0-a;Port=5432;Database=apicrudweb;Userid=ericdev;Password=bP4inDUxcLyqIAQuBnbUjSrK5tq83u7N;");
+>>>>>>> 8f0ebd4354193af45f3a991a1d9156087b096352
 			base.OnConfiguring(options);
 		}
 	}
