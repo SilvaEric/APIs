@@ -10,7 +10,6 @@ namespace ApiCRUDWeb
 {
 	public class Startup
 	{
-		public IConfiguration configuration { get; }
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddScoped<AppDbContext>();
