@@ -3,6 +3,7 @@ using System;
 using ApiCRUDWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApiCRUDWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240626203218_UpdatePropsOwner")]
+    partial class UpdatePropsOwner
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,9 +116,6 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
@@ -133,6 +133,10 @@ namespace ApiCRUDWeb.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Contact")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasDiscriminator().HasValue("Institution");
                 });
 
@@ -146,6 +150,10 @@ namespace ApiCRUDWeb.Migrations
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasDiscriminator().HasValue("Owner");
                 });

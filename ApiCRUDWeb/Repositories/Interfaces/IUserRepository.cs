@@ -10,7 +10,13 @@ namespace ApiCRUDWeb.Repositories.Interfaces
 
 		Task<User> GetUser(Guid id);
 
-		Task<ICollection<User>> GetAllUser();
+		Task<User> Login(string email, string password);
+
+		Task<bool> RegisterOwnerAsync(Owner user);
+
+		Task<bool> RegisterInstitutionAsync(Institution user);
+
+		Task<bool> UpdateUserAsync(User user);
 
 	}
 }

@@ -9,7 +9,6 @@ C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.GeneratedMSBuildEditorConfig.edito
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.AssemblyInfoInputs.cache
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.AssemblyInfo.cs
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.csproj.CoreCompileInputs.cache
-C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.MvcApplicationPartsAssemblyInfo.cache
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\staticwebassets.build.json
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\staticwebassets.development.json
 C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\staticwebassets\msbuild.ApiCRUDWeb.Microsoft.AspNetCore.StaticWebAssets.props
@@ -99,7 +98,6 @@ C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Dev\ApiCRUDWeb\obj\Debug\net8.0\ApiCRUDWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Npgsql.dll
 C:\Dev\ApiCRUDWeb\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

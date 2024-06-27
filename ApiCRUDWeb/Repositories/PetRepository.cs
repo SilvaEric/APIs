@@ -44,7 +44,8 @@ namespace ApiCRUDWeb.Repositories.Interfaces
 		public async Task<List<Pet>> GetAllPets(Guid tutorId)
 		{
 
-			var _pets = await _context.Pets.Where(p => p.UserId == tutorId).ToListAsync();
+			var _pets = await _context.Pets.Include(p=>p.Details)
+				.Where(p => p.UserId == tutorId).ToListAsync();
 				
 			return _pets;
 
@@ -55,11 +56,9 @@ namespace ApiCRUDWeb.Repositories.Interfaces
 			var _pet = await _context.Pets.Include(p=>p.Details)
 				.Where(pet=> pet.UserId == tutorId && pet.PetId == petId)
 				.FirstOrDefaultAsync();
-			///await _context.Entry(_pet).Reference(p => p.Details).LoadAsync();
+			
 			if(_pet is null)
-			{
 				throw new InvalidOperationException("Esse pet não existe em nossa base de dados");
-			}
 
 			return _pet;
 		}

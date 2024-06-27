@@ -17,7 +17,7 @@ namespace ApiCRUDWeb.Repositories
 		{
 			try 
 			{ 
-				_context.Users.Add(user);
+				await _context.Users.AddAsync(user);
 				await _context.SaveChangesAsync();
 				return user;
 			}
@@ -28,12 +28,14 @@ namespace ApiCRUDWeb.Repositories
 			}
 		}
 
-		public async Task<ICollection<User>> GetAllUser()
+		public async Task<User> Login(string email, string password)
 		{
 			try
 			{
-				var users =  await _context.Users.ToListAsync();
-				return users;
+				var _user = await _context.Users
+					.Where(u => u.EmailAdress == email && u.Password == password)
+					.FirstOrDefaultAsync();
+				return _user;
 			}
 
 			catch
@@ -56,5 +58,74 @@ namespace ApiCRUDWeb.Repositories
 			throw new InvalidOperationException("Não foi possivel encontrar o usuário");
 
 		}
+
+		public async Task<bool> RegisterOwnerAsync(Owner owner)
+		{
+			var _user = await _context.Users.Where(u => u.UserId == owner.UserId)
+				.FirstOrDefaultAsync();
+			
+			if(_user is not null)
+			{
+				var remove = _context.Users.Remove(_user);
+
+				if (remove.State != EntityState.Deleted)
+					return false;
+
+				await _context.SaveChangesAsync();
+			}
+
+			var add = await _context.Users.AddAsync(owner);
+			if (add.State != EntityState.Added)
+				return false;
+
+			await _context.SaveChangesAsync();
+
+
+			return true;
+		}
+
+		public async Task<bool> RegisterInstitutionAsync(Institution institution)
+		{
+			var _user = await _context.Users.Where(u => u.UserId == institution.UserId)
+				.FirstOrDefaultAsync();
+
+			if(_user is not null)
+			{
+				var remove = _context.Users.Remove(_user);
+
+				if (remove.State != EntityState.Deleted)
+					return false;
+				
+				await _context.SaveChangesAsync();
+			}
+			
+			var add = await _context.Users.AddAsync(institution);
+			if (add.State != EntityState.Added)
+				return false;
+
+			await _context.SaveChangesAsync();
+
+			return true;
+		}
+
+		public async Task<bool> UpdateUserAsync(User user)
+		{
+			var _user = await _context.Users.Where(u => u.UserId == user.UserId)
+				.FirstOrDefaultAsync();
+
+			if (_user is null)
+				return false;
+
+			_user.Name = user.Name;
+			_user.Adress = user.Adress;
+			_user.EmailAdress = user.EmailAdress;
+			_user.PhoneNumber = user.PhoneNumber;
+			_user.Password = user.Password;
+
+			_context.Update(_user);
+			await _context.SaveChangesAsync();
+
+			return true;
+;		}
 	}
 }

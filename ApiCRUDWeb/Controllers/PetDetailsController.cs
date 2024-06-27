@@ -28,19 +28,6 @@ namespace ApiCRUDWeb.Controllers
 			return StatusCode(StatusCodes.Status201Created);
 		}
 
-		[HttpGet("[action]")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> GetAsync(Guid petId)
-		{
-			var register = await _petDetailsRepository.GetPetDetails(petId);
-			if (register is null)
-			{
-				return NoContent();
-			}
-			return Ok(register);
-		}
-
 		[HttpPut("[action]/{petId:Guid}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]

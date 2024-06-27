@@ -37,12 +37,9 @@ namespace ApiCRUDWeb.Repositories
 			if (petDetailsContext == null)
 				throw new InvalidOperationException("Detalhes do pet não exitem na base de dados");
 
-			if (input.NonPredominantColor is not null)
-				petDetailsContext.NonPredominantColor = input.NonPredominantColor;
-
-			if(input.TongueColor is not null)
-				petDetailsContext.TongueColor = input.TongueColor;
-
+			
+			petDetailsContext.NonPredominantColor = input.NonPredominantColor;
+			petDetailsContext.TongueColor = input.TongueColor;
 			petDetailsContext.PredominantColor = input.PredominantColor;
 			petDetailsContext.Heigth = input.Heigth;
 			petDetailsContext.Pelage = input.Pelage;

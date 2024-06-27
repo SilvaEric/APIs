@@ -10,12 +10,13 @@ namespace ApiCRUDWeb.Controllers
 	public class PetController: ControllerBase
 	{
 		private readonly IPetRepository _petRepository;
+		private readonly IUserRepository _userRepository;
 
-		public PetController(IPetRepository petRepository)
+		public PetController(IPetRepository petRepository, IUserRepository userRepository)
 		{
 			_petRepository = petRepository;
+			_userRepository = userRepository;
 		}
-
 
 		[HttpGet("[action]/{tutorId:Guid}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
@@ -46,14 +47,18 @@ namespace ApiCRUDWeb.Controllers
 
 		[HttpPost("[action]/{tutorId:Guid}")]
 		[ProducesResponseType(StatusCodes.Status201Created)]
+		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		public async Task<IActionResult> RegisterAsync([FromBody] Pet pet, Guid tutorId)
 		{
+			var tutorType = await _userRepository.GetUser(tutorId);
+			if (tutorType.GetType() == typeof(User))
+				return Unauthorized();
+
 			var createPet = await _petRepository.AddPet(pet, tutorId);
+
 			if(createPet is null)
-			{
 				return BadRequest();
-			}
 			return StatusCode(StatusCodes.Status201Created);
 		}
 
