@@ -14,8 +14,7 @@ namespace ApiCRUDWeb.Data
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
 
-			///options.UseNpgsql(Environment.GetEnvironmentVariable("PostgresSql"));
-			options.UseNpgsql("Server=dpg-cpn5ra08fa8c73arhst0-a.oregon-postgres.render.com;Port=5432;Database=apicrudweb;Userid=ericdev;Password=bP4inDUxcLyqIAQuBnbUjSrK5tq83u7N;SSL MODE=Require");
+			options.UseNpgsql(Environment.GetEnvironmentVariable("PostgresSql"));
 			base.OnConfiguring(options);
 		}
 	}
